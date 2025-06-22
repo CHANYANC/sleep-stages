@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>수면 피드백</title>
+  <style>
+    body {
+      background: #eaf7ff;
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .report-container {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px 24px;
+      max-width: 420px;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #1e40af;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #222;
+      margin-top: 18px;
+      margin-bottom: 6px;
+    }
+
+    .section-content {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: #333;
+      background-color: #f4f7fc;
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .back-button {
+      margin-top: 28px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      background-color: #1e40af;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .back-button:hover {
+      background-color: #173b99;
+    }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <h1>수면 피드백</h1>
+
+    {% if major_stage == "N1" %}
+      <div class="section-title">주요 원인</div>
+      <div class="section-content">
+        수면의 가장 초기 단계인 N1 수면이 부족한 경우, 잠드는 데 어려움을 겪었을 가능성이 있어요.  
+        이는 스트레스, 불안, 환경 소음, 불규칙한 수면 습관 등 다양한 요인이 원인일 수 있습니다.  
+        특히, 자기 전에 전자기기를 오래 사용하거나, 카페인 섭취, 밝은 조명이 지속되면 N1 수면이 짧아질 수 있어요.
+      </div>
+      <div class="section-title">보완 방안</div>
+      <div class="section-content">
+        수면 시작 전 최소 1시간 동안은 조명을 낮추고, 휴대폰 등 자극적인 기기 사용을 줄여보세요.  
+        따뜻한 물로 샤워하거나 짧은 명상, 스트레칭도 긴장 완화에 도움이 됩니다.  
+        또한, 하루 일정을 규칙적으로 유지하면서 일정한 취침-기상 시간을 지키는 것이 중요합니다.
+      </div>
+
+    {% elif major_stage == "N2" %}
+      <div class="section-title">주요 원인</div>
+      <div class="section-content">
+        N2 수면은 전체 수면의 절반 이상을 차지하는 안정화 단계입니다.  
+        이 단계가 과도하게 길어진 경우, 깊은 수면(N3)이나 REM 수면으로 충분히 전환되지 않았을 수 있습니다.  
+        이는 수면의 질이 낮거나, 전날 수면 부족을 보충하는 반응일 수도 있어요.  
+        또는 스트레스, 카페인, 잦은 각성 등으로 인해 수면 주기가 비정상적으로 변했을 수 있습니다.
+      </div>
+      <div class="section-title">보완 방안</div>
+      <div class="section-content">
+        규칙적인 운동과 아침 햇빛 노출은 생체리듬 회복에 효과적입니다.  
+        저녁에는 자극적인 활동을 피하고, 이완을 유도하는 활동(요가, 독서 등)을 통해 자연스러운 수면 유도를 도와주세요.  
+        수면 환경은 최대한 어둡고 조용하게 유지하는 것이 좋으며, 필요 시 수면일지를 작성해 패턴을 파악해보는 것도 도움이 됩니다.
+      </div>
+
+    {% elif major_stage == "N3" %}
+      <div class="section-title">주요 원인</div>
+      <div class="section-content">
+        N3 수면은 가장 깊은 수면 단계로, 피로 회복과 면역 기능 회복에 중요한 역할을 합니다.  
+        이 단계가 과도하게 길어졌다면, 최근에 극심한 피로가 누적되었거나 수면 부족이 누적된 상태일 수 있어요.  
+        또는 수면 효율은 낮은데 깊은 수면만 과도하게 나타난 경우일 수도 있어, 전반적인 수면의 질을 다시 점검해볼 필요가 있습니다.
+      </div>
+      <div class="section-title">보완 방안</div>
+      <div class="section-content">
+        충분한 N3 수면은 긍정적이지만, 과도한 경우 기상 후에도 무거운 피로감이 남을 수 있어요.  
+        기상 시간을 일정하게 유지하고, 낮잠은 20분 이내로 짧게 가져가는 것이 좋아요.  
+        일주일간의 수면 시간을 기록해보면서 깊은 수면의 과도한 분포가 반복되는지를 확인해보는 것도 좋습니다.
+      </div>
+
+    {% elif major_stage == "REM" %}
+      <div class="section-title">주요 원인</div>
+      <div class="section-content">
+        REM 수면은 감정 조절과 기억 정리에 중요한 역할을 합니다.  
+        이 단계가 비정상적으로 길어진 경우, 수면이 단절되거나 수면 구조가 깨졌을 가능성이 있습니다.  
+        최근 스트레스가 많거나, 불안한 감정 상태, 약물 복용 중단(특히 항우울제, 수면제 등)이 영향을 줄 수 있어요.  
+        꿈을 자주 꾸거나 악몽이 많아진 것도 REM 수면 과잉의 신호일 수 있습니다.
+      </div>
+      <div class="section-title">보완 방안</div>
+      <div class="section-content">
+        감정적인 긴장을 해소하기 위한 낮 시간의 활동 조절이 중요합니다.  
+        자기 전에는 명상, 일기 쓰기 등 감정 정리를 할 수 있는 루틴을 만들어 보세요.  
+        특히 알코올 섭취나 야간 전자기기 사용은 REM 수면 구조에 영향을 줄 수 있으므로 피하는 것이 좋아요.  
+        반복적인 악몽이나 몽유병 증상이 있다면 수면 전문의를 찾아 상담해보는 것도 권장됩니다.
+      </div>
+
+    {% else %}
+      <div class="section-title">피드백을 제공할 수 없습니다</div>
+      <div class="section-content">
+        수면 데이터가 부족하거나 예측이 명확하지 않아 분석이 어렵습니다.  
+        다음 분석에서는 더욱 정확한 결과를 제공해드릴게요.
+      </div>
+    {% endif %}
+
+
+    <a class="back-button" href="{{ url_for('index') }}">홈으로</a>
+  </div>
+</body>
+</html>
